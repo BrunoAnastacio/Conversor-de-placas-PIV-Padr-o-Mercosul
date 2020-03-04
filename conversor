@@ -1,0 +1,29 @@
+"""
+O objetivo é converter uma placa veícular brasileira do padrão antigo 'AAA1111' para o padrão Mercosul 'AAA1A11'
+Pontos a melhorar:
+- Melhorar o uso das funções try: e except:, melhorando muito o tratamento de erros;
+- Dar uma devolutiva ao usuário caso ele tente inserir uma placa que já esteja no padrão Mercosul
+- Criar uma verificação para garantirmos que o sistema não vai aceitar outropadrão de digitação que não seja 'AAA1111'
+"""
+
+conversor = { 
+    "0":"A",
+    "1":"B",
+    "2":"C",
+    "3":"D",
+    "4":"E",
+    "5":"F",
+    "6":"G",
+    "7":"H",
+    "8":"I",
+    "9":"J"
+}
+
+placaAntiga = input("Insira a placa: \n")
+try:
+    placaNova = placaAntiga.replace(placaAntiga[4],conversor.get(placaAntiga[4]))
+    print ("Placa padrão antigo: " + placaAntiga.upper())
+    print ("Placa padrão Mercosul BR: " + placaNova.upper())
+except:
+    print ("Algo deu errado, favor tentar novamente, observando o seguinte padrão: AAA1111")
+
